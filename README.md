@@ -1,6 +1,9 @@
 # redux-toolkit-note
 A note for Reudx Toolkit
 
+### Basic concept in node.js
+
+```index.js```
 ```javascript
 const redux = require("redux")
 const createStore = redux.createStore
