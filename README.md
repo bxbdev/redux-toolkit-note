@@ -1,5 +1,5 @@
 # redux-toolkit-note
-A note for Reudx Toolkit
+A note for Redux Toolkit
 
 ### Basic redux concept in node.js
 
