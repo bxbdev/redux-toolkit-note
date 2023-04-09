@@ -1,5 +1,8 @@
 const redux = require('redux')
+const immer = require('immer')
+
 const createStore = redux.createStore
+const produce = immer.produce
 
 const CHANGE_STREET = 'CHANGE_STREET'
 
@@ -16,13 +19,16 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case 'CHANGE_STREET':
-            return {
-                ...state,
-                address: {
-                    ...state.address,
-                    street: action.payload
-                }
-            }
+            // return {
+            //     ...state,
+            //     address: {
+            //         ...state.address,
+            //         street: action.payload
+            //     }
+            // }
+            return produce(state, draft => {
+                draft.address.street = action.payload
+            })
         default: 
             return state
     }
