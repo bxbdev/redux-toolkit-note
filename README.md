@@ -56,7 +56,7 @@ const store = createStore(reducer)
 
 console.log('Initial state', store.getState()) // Initial state { numOfCakes: 10 }
 
-const unsubscribe = store.subscribe(() => console.log('Update state', store.getStore())
+const unsubscribe = store.subscribe(() => console.log('Update state', store.getState())
 
 store.dispatch(orderCake()) // Update state { numOfCakes: 9 }
 store.dispatch(orderCake()) // Update state { numOfCakes: 8 }
