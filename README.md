@@ -7,6 +7,7 @@ A note for Reudx Toolkit
 ```javascript
 const redux = require("redux")
 const createStore = redux.createStore
+const bindActionCreators = reudx.bindActionCreators
 
 const initialCakeState = {
   numOfCakes: 10,
@@ -60,10 +61,17 @@ console.log('Initial state', store.getState()) // Initial state { numOfCakes: 10
 
 const unsubscribe = store.subscribe(() => console.log('Update state', store.getStore())
 
-store.dispatch(orderCake()) // Update state { numOfCakes: 9 }
-store.dispatch(orderCake()) // Update state { numOfCakes: 8 }
-store.dispatch(orderCake()) // Update state { numOfCakes: 7 }
-store.dispatch(restockCake(3)) // Update state { numOfCakes: 10 }
+const actions = bindActionCreators({ orderCake, restockCake }, store)
+
+// store.dispatch(orderCake()) // Update state { numOfCakes: 9 }
+// store.dispatch(orderCake()) // Update state { numOfCakes: 8 }
+// store.dispatch(orderCake()) // Update state { numOfCakes: 7 }
+// store.dispatch(restockCake(3)) // Update state { numOfCakes: 10 }
+
+action.orderCacke() // Update state { numOfCakes: 9 }
+action.orderCacke() // Update state { numOfCakes: 8 }
+action.orderCacke() // Update state { numOfCakes: 7 }
+action.resockCacke(3) // Update state { numOfCakes: 10 }
 
 unsubscribe()
 ````
