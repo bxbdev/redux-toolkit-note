@@ -34,7 +34,7 @@ const reducer = (state = initialCakeState, action) => {
   // check action type
   console.log(action.type)
   
-  swtich(action.type) {
+  switch(action.type) {
     case CAKE_ORDERED:
       return {
         // copy a state if there are more properites
