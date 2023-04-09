@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/bxbdev/redux-toolkit-note#readme",
   "dependencies": {
+    "immer": "^9.0.21",
     "redux": "^4.2.1"
   }
 }
