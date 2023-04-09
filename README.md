@@ -1,7 +1,7 @@
 # redux-toolkit-note
 A note for Reudx Toolkit
 
-### Basic concept in node.js
+### Basic redux concept in node.js
 
 ```index.js```
 ```javascript
