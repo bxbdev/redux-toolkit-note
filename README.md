@@ -27,6 +27,7 @@ function orderCake() {
 function restockCake(qty = 1) {
   return {
     type: CAKE_RESTOCKED,
+    // qunatity: qty
     payload: qty
   }
 }
