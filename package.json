@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/bxbdev/redux-toolkit-note/issues"
   },
-  "homepage": "https://github.com/bxbdev/redux-toolkit-note#readme"
+  "homepage": "https://github.com/bxbdev/redux-toolkit-note#readme",
+  "dependencies": {
+    "redux": "^4.2.1"
+  }
 }

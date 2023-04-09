@@ -1,9 +1,13 @@
 const redux = require("redux")
 const createStore = redux.createStore
 const bindActionCreators = redux.bindActionCreators
+const combineReducers = redux.combineReducers
 
 const initialCakeState = {
-  numOfCakes: 10,
+  numOfCakes: 10
+}
+
+const initialIceCreamState = {
   numOfIceCreams: 20
 }
 
@@ -41,9 +45,8 @@ function restockIceCream(qty = 1) {
   }
 }
 
-const reducer = (state = initialCakeState, action) => {
+const cakeReducer = (state = initialCakeState, action) => {
   // check action type
-  console.log(action.type)
   
   switch(action.type) {
     case CAKE_ORDERED:
@@ -57,23 +60,37 @@ const reducer = (state = initialCakeState, action) => {
         ...state,
         numOfCakes: state.numOfCakes + action.payload
       }
-    case ICECREAM_ORDERED:
-      return {
-        ...state,
-        numOfIceCreams: state.numOfIceCreams - 1
-      }
-    case ICECREAM_RESTOCKED:
-      return {
-        ...state,
-        numOfIceCreams: state.numOfIceCreams + action.payload
-      }
     default:
       return state
   }
   
 }
 
-const store = createStore(reducer)
+const iceCreamReducer = (state = initialIceCreamState, action) => {
+    switch(action.type) {
+      case ICECREAM_ORDERED:
+        return {
+          ...state,
+          numOfIceCreams: state.numOfIceCreams - 1
+        }
+      case ICECREAM_RESTOCKED:
+        return {
+          ...state,
+          numOfIceCreams: state.numOfIceCreams + action.payload
+        }
+      default:
+        return state
+    }
+    
+}
+
+const rootReducer = combineReducers({
+    cake: cakeReducer,
+    iceCreamReducer: iceCreamReducer
+})
+
+// createStore only can contain 1 reducer
+const store = createStore(rootReducer)
 
 console.log('Initial state', store.getState()) // Initial state { numOfCakes: 10, numOfIceCreams: 20 }
 
