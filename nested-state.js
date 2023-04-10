@@ -1,8 +1,5 @@
-const redux = require('redux')
-const immer = require('immer')
-
-const createStore = redux.createStore
-const produce = immer.produce
+const { createStore } = require('redux')
+const { produce } = require('immer')
 
 const CHANGE_STREET = 'CHANGE_STREET'
 

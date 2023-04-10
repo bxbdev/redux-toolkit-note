@@ -1,7 +1,11 @@
-const redux = require("redux")
-const createStore = redux.createStore
-const bindActionCreators = redux.bindActionCreators
-const combineReducers = redux.combineReducers
+// const redux = require("redux")
+// const createStore = redux.createStore
+// const bindActionCreators = redux.bindActionCreators
+// const combineReducers = redux.combineReducers
+
+const { createStore, bindActionCreators, combineReducers, applyMiddleware} = require("redux")
+const { createLogger } = require('redux-logger')
+const logger = createLogger()
 
 const initialCakeState = {
   numOfCakes: 10
@@ -90,11 +94,11 @@ const rootReducer = combineReducers({
 })
 
 // createStore only can contain 1 reducer
-const store = createStore(rootReducer)
+const store = createStore(rootReducer, applyMiddleware(logger))
 
 console.log('Initial state', store.getState()) // Initial state { numOfCakes: 10, numOfIceCreams: 20 }
 
-const unsubscribe = store.subscribe(() => console.log('Update state', store.getState()))
+const unsubscribe = store.subscribe(() => {})
 
 // store.dispatch(orderCake()) // Update state { numOfCakes: 9 }
 // store.dispatch(orderCake()) // Update state { numOfCakes: 8 }
