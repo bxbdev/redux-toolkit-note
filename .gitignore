@@ -1,4 +1,6 @@
-package-lock.json
+/redux-demo/package-lock.json
+/rtk-demo/package-lock.json
 
 # dependencies
-/node_modules
+/redux-demo/node_modules
+/rtk-demo/node_modules
