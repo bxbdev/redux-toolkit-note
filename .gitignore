@@ -1,8 +1,24 @@
-/redux-demo/package-lock.json
-/rtk-demo/package-lock.json
-/react-rtk-demo/package-lock.json
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# dependencies
-/redux-demo/node_modules
-/rtk-demo/node_modules
-/react-rtk-demo/node_modules
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
